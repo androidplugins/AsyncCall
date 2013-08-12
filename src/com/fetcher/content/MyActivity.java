@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import com.fetcher.content.DataFetcher.ContentFetcher;
+import com.fetcher.content.dataFetcher.ContentFetcher;
 
 public class MyActivity extends Activity {
     @Override

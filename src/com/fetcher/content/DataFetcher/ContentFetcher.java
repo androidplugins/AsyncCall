@@ -1,4 +1,4 @@
-package com.fetcher.content.DataFetcher;
+package com.fetcher.content.dataFetcher;
 
 import android.os.AsyncTask;
 import android.util.Log;
