@@ -1,4 +1,4 @@
-package com.fetcher.content.servercall1;
+package com.fetcher.content.servercall;
 
 import android.os.AsyncTask;
 import android.util.Log;
