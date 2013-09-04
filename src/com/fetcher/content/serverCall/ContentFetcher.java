@@ -19,10 +19,10 @@ import java.io.InputStreamReader;
 
 public class ContentFetcher extends AsyncTask<String, Void, String> {
 
-    private Callback callback;
+    private Callback<String> callback;
     private String requestType;
 
-    public ContentFetcher(Callback callback, String RequestType) {
+    public ContentFetcher(Callback<String> callback, String RequestType) {
         this.callback = callback;
         requestType = RequestType;
     }
@@ -30,8 +30,7 @@ public class ContentFetcher extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... url) {
-        String response = response(url[0]);
-        return response;
+        return response(url[0]);
     }
 
     public String response(String url) {
@@ -55,8 +54,9 @@ public class ContentFetcher extends AsyncTask<String, Void, String> {
     }
 
     private HttpRequestBase httpRequest(String url) {
-       if(requestType == "GET")return new HttpGet(url);
-       else return new HttpPost(url);
+       if(requestType.equals("GET"))return new HttpGet(url);
+       else if(requestType.equals("POST"))return new HttpPost(url);
+       else return null;
     }
 
 

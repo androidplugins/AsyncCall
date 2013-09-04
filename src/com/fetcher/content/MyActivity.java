@@ -35,7 +35,7 @@ public class MyActivity extends Activity {
 
     private void makeCall(String url, String requestType) {
         ProgressDialog dialog = ProgressDialog.show(MyActivity.this, null, "Fetching details from "+url+" using" + requestType, true);
-        final Callback callback = requestCallback(dialog);
+        final Callback<String> callback = requestCallback(dialog);
         ContentFetcher contentFetcher = new ContentFetcher(callback, requestType);
         contentFetcher.execute(url);
         dialog.setCancelable(true);
@@ -48,8 +48,8 @@ public class MyActivity extends Activity {
         dialog.show();
     }
 
-    private Callback requestCallback(final ProgressDialog dialog) {
-        return new Callback() {
+    private Callback<String> requestCallback(final ProgressDialog dialog) {
+        return new Callback<String>() {
             @Override
             public void execute(String result) {
                 dialog.dismiss();
