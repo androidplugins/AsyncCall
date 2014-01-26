@@ -1,4 +1,4 @@
-package com.fetcher.content;
+package androidplugins.contentfetcher;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -7,7 +7,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import com.fetcher.content.servercall.ContentFetcher;
+
+
+import androidplugins.Callback;
 
 public class MyActivity extends Activity {
     @Override
